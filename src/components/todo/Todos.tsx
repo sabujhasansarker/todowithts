@@ -1,4 +1,3 @@
-import React from "react";
 import { Todo } from "./Todo";
 
 interface Props {
@@ -12,11 +11,15 @@ export const Todos = ({ todos }: Props) => {
         <h4>Todo List's</h4>
       </div>
       <div className="card-body">
-        <ul>
-          {todos.map((todo, i) => (
-            <Todo key={i} todo={todo} />
-          ))}
-        </ul>
+        {todos.length > 0 ? (
+          <ul>
+            {todos.map((todo, i) => (
+              <Todo key={i} todo={todo} />
+            ))}
+          </ul>
+        ) : (
+          <h3 className="text-center mt-4">No Todo's </h3>
+        )}
       </div>
     </div>
   );

@@ -1,1 +1,1 @@
-type todoType = { id: Number; title: String; description: String };
+type todoType = { id: number; title: string; description: string };

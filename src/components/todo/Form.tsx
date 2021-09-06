@@ -1,18 +1,16 @@
 import { ReactElement, useState } from "react";
+import { todoObject } from "../../initialvalue";
 
 interface Props {
   addTodo: Function;
 }
 
 export default function Form({ addTodo }: Props): ReactElement {
-  const [state, setState] = useState<todoType>({
-    id: NaN,
-    title: "",
-    description: "",
-  });
+  const [state, setState] = useState<todoType>(todoObject);
   const onSubmit: Function = (e: any) => {
     e.preventDefault();
     addTodo(state);
+    setState(todoObject);
   };
   const onChange: Function = (e: any) =>
     setState({
@@ -30,11 +28,11 @@ export default function Form({ addTodo }: Props): ReactElement {
         <form className="form" onSubmit={(e) => onSubmit(e)}>
           <div className="mb-3">
             <input
-              id="title"
               className="form-control "
               type="text"
               placeholder="Title"
               name="title"
+              // value=
               onChange={(e) => onChange(e)}
             />
           </div>
