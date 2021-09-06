@@ -1,7 +1,7 @@
 .header {
   position: fixed;
   z-index: 2;
-  left: 70px;
+  left: 0px;
   top: 0;
   right: 0;
   border-bottom: 2px solid $border-color;
@@ -9,7 +9,7 @@
   padding: 1rem 0;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background: $white;
   @include phone-land() {
     margin-left: 0;

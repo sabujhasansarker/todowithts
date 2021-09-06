@@ -1,12 +1,13 @@
 import React, { ReactElement } from "react";
 import Layouts from "./components/Layouts";
+import Nav from "./components/Nav";
 
 interface Props {}
 
 export default function App({}: Props): ReactElement {
   return (
     <Layouts>
-      <h1>hi</h1>
+      <Nav />
     </Layouts>
   );
 }
