@@ -9,6 +9,7 @@ The smaller device rules always should write below the bigger device rules
 Fixing Order => Base + Typography >> General Layout + Grid >> Page Layout + Component
 */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:wght@100;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap");
 .svgh-1 {
   height: 1px !important; }
 
@@ -35074,5 +35075,8 @@ tbody:hover::-webkit-scrollbar-thumb {
 
 .wallet-history tbody {
   height: 230px; }
+
+main {
+  margin-top: 10rem; }
 
 /*# sourceMappingURL=../../styles/style.css.map */
