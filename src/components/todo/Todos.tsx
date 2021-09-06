@@ -1,29 +1,23 @@
 import React from "react";
 import { Todo } from "./Todo";
 
-interface Props {}
+interface Props {
+  todos: Array<{ id: Number; title: String; description: String }>;
+}
 
-const todoList = [
-  {
-    id: 1,
-    title: "hi",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae necessitatibus assumenda, fugiat ratione totam unde fuga at doloribus omnis, dolorem quae. Reiciendis corporis aspernatur natus saepe voluptas asperiores illo minima?",
-  },
-  {
-    id: 2,
-    title: "hi",
-    description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae necessitatibus assumenda, fugiat ratione totam unde fuga at doloribus omnis, dolorem quae. Reiciendis corporis aspernatur natus saepe voluptas asperiores illo minima?",
-  },
-];
-
-export const Todos = (props: Props) => {
+export const Todos = ({ todos }: Props) => {
   return (
-    <div>
-      {todoList.map((todo) => (
-        <Todo todo={todo} />
-      ))}
+    <div className="card">
+      <div className="card-header">
+        <h4>Todo List's</h4>
+      </div>
+      <div className="card-body">
+        <ul>
+          {todos.map((todo) => (
+            <Todo todo={todo} />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
