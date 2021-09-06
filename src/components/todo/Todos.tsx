@@ -2,7 +2,7 @@ import React from "react";
 import { Todo } from "./Todo";
 
 interface Props {
-  todos: Array<{ id: Number; title: String; description: String }>;
+  todos: Array<todoType>;
 }
 
 export const Todos = ({ todos }: Props) => {
@@ -13,8 +13,8 @@ export const Todos = ({ todos }: Props) => {
       </div>
       <div className="card-body">
         <ul>
-          {todos.map((todo) => (
-            <Todo todo={todo} />
+          {todos.map((todo, i) => (
+            <Todo key={i} todo={todo} />
           ))}
         </ul>
       </div>

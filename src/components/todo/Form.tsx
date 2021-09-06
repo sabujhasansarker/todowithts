@@ -5,11 +5,11 @@ interface Props {
 }
 
 export default function Form({ addTodo }: Props): ReactElement {
-  const [state, setState] = useState<{
-    id: number;
-    title: string;
-    description: string;
-  }>({ id: NaN, title: "", description: "" });
+  const [state, setState] = useState<todoType>({
+    id: NaN,
+    title: "",
+    description: "",
+  });
   const onSubmit: Function = (e: any) => {
     e.preventDefault();
     addTodo(state);

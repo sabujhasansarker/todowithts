@@ -7,18 +7,8 @@ import { Todos } from "./components/todo/Todos";
 interface Props {}
 
 export default function App({}: Props): ReactElement {
-  const [todos, setTodos] = useState<
-    Array<{
-      id: Number;
-      title: String;
-      description: String;
-    }>
-  >([]);
-  const addTodo = (value: {
-    id: Number;
-    title: String;
-    description: String;
-  }) => {
+  const [todos, setTodos] = useState<Array<todoType>>([]);
+  const addTodo = (value: todoType) => {
     setTodos([...todos, value]);
   };
   return (
@@ -28,13 +18,7 @@ export default function App({}: Props): ReactElement {
         <main className="container ">
           <div className="row ">
             <div className="col-md-6">
-              <Form
-                addTodo={(e: {
-                  id: Number;
-                  title: String;
-                  description: String;
-                }) => addTodo(e)}
-              />
+              <Form addTodo={(e: todoType) => addTodo(e)} />
             </div>
             <div className="col-md-6">
               <Todos todos={todos} />
