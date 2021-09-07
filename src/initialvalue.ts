@@ -1,4 +1,4 @@
-export const todoObject = {
+export const todoObject: todoType = {
   id: NaN,
   title: "",
   description: "",

@@ -10,7 +10,7 @@ export default function Form({ addTodo }: Props): ReactElement {
   const onSubmit: Function = (e: any) => {
     e.preventDefault();
     addTodo(state);
-    setState(todoObject);
+    setState({ id: NaN, title: "", description: "" });
   };
   const onChange: Function = (e: any) =>
     setState({
@@ -32,7 +32,7 @@ export default function Form({ addTodo }: Props): ReactElement {
               type="text"
               placeholder="Title"
               name="title"
-              // value=
+              value={state.title}
               onChange={(e) => onChange(e)}
             />
           </div>
@@ -41,6 +41,7 @@ export default function Form({ addTodo }: Props): ReactElement {
               className="form-control"
               placeholder="Description"
               name="description"
+              value={state.description}
               onChange={(e) => onChange(e)}
             ></textarea>
           </div>
